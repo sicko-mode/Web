@@ -20,7 +20,8 @@ const App = () => {
   ,     [info, setInfo] = useState({name: '', category: ''});
 
   const handleLogin = () => {
-    service.login(id, pw);
+    let a = service.login(id, pw);
+    console.log(a);
   }
   ,     handleRegister = () => {
     service.register(id, pw, email);

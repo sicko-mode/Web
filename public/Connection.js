@@ -9,9 +9,25 @@ var remoteStream;
 var turnReady;
 
 var pcConfig = {
-  'iceServers': [{
-    'urls': 'stun:stun.l.google.com:19302'
-  }]
+  'iceServers': [{url:'stun:stun01.sipphone.com'},
+  {url:'stun:stun.ekiga.net'},
+  {url:'stun:stun.fwdnet.net'},
+  {url:'stun:stun.ideasip.com'},
+  {url:'stun:stun.iptel.org'},
+  {url:'stun:stun.rixtelecom.se'},
+  {url:'stun:stun.schlund.de'},
+  {url:'stun:stun.l.google.com:19302'},
+  {url:'stun:stun1.l.google.com:19302'},
+  {url:'stun:stun2.l.google.com:19302'},
+  {url:'stun:stun3.l.google.com:19302'},
+  {url:'stun:stun4.l.google.com:19302'},
+  {url:'stun:stunserver.org'},
+  {url:'stun:stun.softjoys.com'},
+  {url:'stun:stun.voiparound.com'},
+  {url:'stun:stun.voipbuster.com'},
+  {url:'stun:stun.voipstunt.com'},
+  {url:'stun:stun.voxgratia.org'},
+  {url:'stun:stun.xten.com'}]
 };
 
 // Set up audio and video regardless of what devices are present.
@@ -23,7 +39,7 @@ var remoteVideo = document.querySelector('#remoteVideo');
 if(localVideo !== null) {
 /////////////////////////////////////////////
 // var room = 'foo';
-window.room = 'dot';
+window.room = 'aa';
 // Could prompt for room name:
 // room = prompt('Enter room name:');
 
@@ -207,11 +223,11 @@ function onCreateSessionDescriptionError(error) {
 function requestTurn(turnURL) {
   var turnExists = false;
   for (var i in pcConfig.iceServers) {
-    if (pcConfig.iceServers[i].urls.substr(0, 5) === 'turn:') {
+
       turnExists = true;
       turnReady = true;
-      break;
-    }
+
+    
   }
 }
 
