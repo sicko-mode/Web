@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Item = () => {
+const Item = ({onDown, onUp, onRemove, text, count, id}) => {
     return (
         <div className="item">
           <div className="remove" onClick={(e) => {
@@ -11,9 +11,9 @@ const Item = () => {
             <div>{text}</div>
           </div>
           <div className="count">
-            <input value={count} />
-            <button onClick={onUp()}></button>
-            <button onClick={onDown()}></button>
+            <input readOnly value={count} />
+            <button onClick={() => onUp(id)}></button>
+            <button onClick={() => onDown(id)}></button>
           </div>
         </div>
     );

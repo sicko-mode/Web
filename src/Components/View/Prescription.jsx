@@ -1,10 +1,22 @@
 import React, {useState} from 'react';
-import Item from './Item.jsx'
+import Item from './Item.jsx';
+import Form from './Form.jsx';
 
 const Prescription = () => {
-	
 	const [list, setList] = useState([]);
-	const [input, changeInput] = useState('');
+	const [inputs, changeInput] = useState('');
+	const [id, setId] = useState(1);
+
+	const handleKey = (e) =>{
+		if(e.key === "ENTER") {
+			handleCreate();
+		}
+	}
+
+	const handleInput = (e) => {
+		let a = e.target.value
+		changeInput(a);
+	}
 
 	const handleUp = (id) => {
 		const index = list.findIndex(li => li.id === id);
@@ -36,28 +48,18 @@ const Prescription = () => {
 		setList(nextList)
 	}
 
-
-	const createLi = (data) => {
-		const { name, id, count } = data;
-		let obj = {
-			id: id,
-			name: name,
-			count: count
-		}
-		setList({...list, obj});
-	}
-
 	const handleCreate = () => {
-      setList(list.concat({
-        id: this.id++,
-				name: input,
-				count: count
-      }));
-
+		setList(list.concat({
+			id: id,
+			name: inputs,
+			count: 1
+		}));
+		setId(id+1);
+		changeInput('');
   }
 
 	const handleRemove = (id) => {
-		setList(list.filter(li => li.id !== li));
+		setList(list.filter(li => li.id !== id));
   }
 
 	const List = list.map(
@@ -69,12 +71,19 @@ const Prescription = () => {
 				text={name}
 				count={count}
 				key={id}
+				id={id}
 			/>
 		)
 	);
 
 	return (
 		<div>
+			<Form 
+				onCreate={handleCreate}
+				onKey={handleKey}
+				onInput={handleInput}
+				value={inputs}
+			/>
 			<div>
 				{List}
 			</div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Prescription from './Prescription.jsx';
 
 const Connect = () => {
 	return(
@@ -8,13 +9,15 @@ const Connect = () => {
 				<video id="localVideo" autoPlay muted playsInline />
 			</div>
 			<div className="Chat">
-				<textarea readOnly>
+				{/* <textarea readOnly>
 				</textarea>
 				<div className="send">
 					<input id="chatInput" name="chat" />
 					<button id="chatSend">보내기</button>
-				</div>
+				</div> */}
+				<Prescription />
 			</div>
+
 		</section>
 	)	
 }
