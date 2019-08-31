@@ -1,0 +1,65 @@
+body, html {margin: 0}
+.bg-red { background-color: #FF4848 }
+.bg-white { background-color: #FFF }
+.bg { background-color: #2C3E50 }
+.bg-green { background-color: #1ABC9C }
+.width-full { width: 100% }
+.txt-white { color: white }
+.logo { font-size: 25px; }
+.nav { width: 100%; height: 80px; display:flex; position: fixed; float: left; top: 0; right: 0; left: 0; z-index: 1030; padding: 0.5em 1.5em; box-sizing: border-box;  justify-content: space-between; }
+.header { width: 100%; padding: 20px; padding-top: calc(6rem + 104px); padding-bottom: 6rem; text-align: center;}
+.footer { width: 100%; padding: 60px; box-sizing: content-box}
+.contents { border: 1px solid #FF4848; height: 50%; }
+.top-btn {
+  
+}
+.asd {
+  width: 15em;
+  height: 15em;
+  display:inline-block;
+  margin: 2em;
+  background: #FF4848;
+  border-radius: 15px;
+}
+.main-contents {
+  vertical-align:middle;
+}
+
+#localVideo {
+  transform: rotateY(180deg);
+  width: 360px;
+}
+#remoteVideo {
+  width: 900px;
+}
+
+.loginForm {
+  display: inline-block;
+  width: 500px;
+  text-align: center;
+}
+
+.loginInput {
+  margin-top: 20px;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.loginButton {
+  font-size: 1.5em;
+  color: white;
+  border: none;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #2C3E50;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 3em;
+}
