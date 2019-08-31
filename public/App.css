@@ -8,12 +8,9 @@ body, html {margin: 0}
 .logo { font-size: 25px; display: flex; align-items: center; }
 .nav { width: 100%; height: 80px; display:flex; position: fixed; float: left; top: 0; right: 0; left: 0; z-index: 1030; padding: 0.5em 1.5em; box-sizing: border-box;  justify-content: space-between; }
 .header { width: 100%; padding-top: calc(6rem + 104px); padding-bottom: 6rem; text-align: center;}
-.footer { width: 100%; padding: 60px; box-sizing: content-box}
-.contents { border: 1px solid #FF4848; height: 50%; }
-.top-btn {
-  
-}
-
+.footer { width: 100%; padding: 60px; box-sizing: border-box; }
+.contents { width: 100%; padding-top: calc(3rem + 30px); display: flex; }
+.top-btn { display: flex; align-items: center}
 video {
   display: block;
   position: initial;
@@ -36,6 +33,33 @@ video {
   align-items: center
 }
 
+textarea {
+  height: 800px;
+  width: 100%;
+}
+
+.video {
+  width: 100%;
+}
+
+.send {
+  display: flex;
+}
+
+#chatInput {
+  width: 89%;
+  height: 40px;
+}
+
+#chatSend {
+  width: 10%;
+  height: 40px;
+}
+
+.Chat {
+  width: 100%;
+}
+
 .asd img {
   width: 120px;
 
@@ -55,6 +79,7 @@ video {
 #localVideo {
   transform: rotateY(180deg);
   width: 360px;
+  display: absolute;
 }
 #remoteVideo {
   width: 900px;

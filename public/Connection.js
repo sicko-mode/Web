@@ -44,7 +44,7 @@ window.room = 'aa';
 // room = prompt('Enter room name:');
 
 var socket = io.connect('https://www.homedoctor.cf');
-
+// https://www.homedoctor.cf
 if (room !== '') {
   socket.emit('create or join', room);
   console.log('Attempted to create or  join room', room);

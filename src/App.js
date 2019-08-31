@@ -1,14 +1,13 @@
 import React, {useState} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import './App.css';
-import Nav from './Components/View/Nav';
-import Foot from './Components/View/Foot';
-import * as service from './Service/Login';
+import Nav from './Components/View/Nav.jsx';
+import Foot from './Components/View/Foot.jsx';
+import * as service from './Service/Login.js';
 
-import Login from './Components/View/Login';
-import Home from './Components/View/Home';
-import Register from './Components/View/Register';
-import Connect from './Components/View/Connect';
+import Login from './Components/View/Login.jsx';
+import Home from './Components/View/Home.jsx';
+import Register from './Components/View/Register.jsx';
+import Connect from './Components/View/Connect.jsx';
 
 
 const field = ['내과', '이비인후과', '외과', '정형외과', '안과', '피부과', '흉부외과', '산부인과', '비뇨기과', '신경과', '신경외과'];

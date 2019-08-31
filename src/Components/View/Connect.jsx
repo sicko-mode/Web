@@ -2,16 +2,17 @@ import React from 'react';
 
 const Connect = () => {
 	return(
-		<section className="Header">
+		<section className="contents">
+			<div className="video">
 				<video id="remoteVideo" autoPlay playsInline />
 				<video id="localVideo" autoPlay muted playsInline />
-			<button id="click">연결/</button>
-			<div>
+			</div>
+			<div className="Chat">
 				<textarea readOnly>
 				</textarea>
-				<div>
+				<div className="send">
 					<input id="chatInput" name="chat" />
-					<button>보내기</button>
+					<button id="chatSend">보내기</button>
 				</div>
 			</div>
 		</section>
