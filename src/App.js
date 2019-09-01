@@ -2,12 +2,13 @@ import React, {useState} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Nav from './Components/View/Nav.jsx';
 import Foot from './Components/View/Foot.jsx';
-import * as service from './Service/Login.js';
+import {login} from './Service/Login.js';
 
 import Login from './Components/View/Login.jsx';
 import Home from './Components/View/Home.jsx';
 import Register from './Components/View/Register.jsx';
 import Connect from './Components/View/Connect.jsx';
+import Mobile from './Components/View/Mobile.jsx';
 
 
 const field = ['내과', '이비인후과', '외과', '정형외과', '안과', '피부과', '흉부외과', '산부인과', '비뇨기과', '신경과', '신경외과'];
@@ -16,18 +17,15 @@ const App = () => {
   const [id, changeId] = useState('')
   ,     [pw, changePw] = useState('')
   ,     [email, changeEmail] = useState('')
-  ,     [info, setInfo] = useState({name: '', category: ''});
+  ,     [info, setInfo] = useState();
 
   const handleLogin = () => {
-    let a = service.login(id, pw);
-    console.log(a);
-  }
-  ,     handleRegister = () => {
-    service.register(id, pw, email);
-  }
-  ,     handleInfo = () => {
-    
+    login().then(res => { 
+      setInfo(res.data.name);
+    })
+      
   };
+
 
   const handleOnChangeLoginInput = e => {
     const {name, value} = e.target;
@@ -42,19 +40,19 @@ const App = () => {
 
   return (
     <Router>
-      <div>
-        <Nav user={info} />
-        <div>
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route path='/login' render={() => <Login handleLogin={handleLogin} handleOnChange={handleOnChangeLoginInput} />} />
-            <Route path='/register' render={() => <Register handleRegister={handleRegister} handleOnChange={handleOnChangeLoginInput} />} />
-            <Route path='/connect' component={Connect}/>
-            <Route path='/logout' />
-          </Switch>
-        </div>
-        <Foot />
-      </div>
+      <Nav user={info} />
+      <Switch>
+
+      <Route path='/mobile' component={Mobile}/>
+        <Route path='/home' component={Home} />
+        <Route path='/register' render={() => <Register handleRegister={handleRegister} handleOnChange={handleOnChangeLoginInput} />} />
+        <Route path='/connect' component={Connect}/>
+        <Route path='/logout' />
+        <Route path='/' render={() => <Login handleLogin={handleLogin} handleOnChange={handleOnChangeLoginInput} />} />
+        
+        
+      </Switch>
+      <Foot />
     </Router>
   );
 }

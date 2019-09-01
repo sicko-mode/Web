@@ -14,17 +14,14 @@ const Prescription = () => {
 	}
 
 	const handleInput = (e) => {
-		let a = e.target.value
+		let a = e.target.value;
 		changeInput(a);
 	}
 
 	const handleUp = (id) => {
-		const index = list.findIndex(li => li.id === id);
-    const selected = list[index]; // 선택한 객체
-
-    const nextList = [...list]; // 배열을 복사
-
-    // 기존의 값들을 복사하고, checked 값을 덮어쓰기
+	const index = list.findIndex(li => li.id === id);
+    const selected = list[index]; 
+    const nextList = [...list];
     nextList[index] = { 
       ...selected, 
       count: selected.count + 1
@@ -34,12 +31,10 @@ const Prescription = () => {
 	}
 
 	const handleDown = (id) => {
-		const index = list.findIndex(li => li.id === id);
-    const selected = list[index]; // 선택한 객체
+	const index = list.findIndex(li => li.id === id);
+    const selected = list[index];
+    const nextList = [...list]; 
 
-    const nextList = [...list]; // 배열을 복사
-
-    // 기존의 값들을 복사하고, checked 값을 덮어쓰기
     nextList[index] = { 
       ...selected, 
       count: selected.count - 1

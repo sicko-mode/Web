@@ -5,8 +5,8 @@ const Connect = () => {
 	return(
 		<section className="contents">
 			<div className="video">
-				<video id="remoteVideo" autoPlay playsInline />
-				<video id="localVideo" autoPlay muted playsInline />
+					<video id="remoteVideo" autoPlay playsInline />
+					<video id="localVideo" autoPlay muted playsInline />
 			</div>
 			<div className="Chat">
 				{/* <textarea readOnly>
@@ -17,8 +17,9 @@ const Connect = () => {
 				</div> */}
 				<Prescription />
 			</div>
-
+			<div id="gan" value="aa"></div>
 		</section>
+		
 	)	
 }
 

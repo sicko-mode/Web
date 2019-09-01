@@ -31,24 +31,27 @@ var pcConfig = {
 };
 
 // Set up audio and video regardless of what devices are present.
-
+var gan = null;
+var gen = null;
+var room = null;
 
 var localVideo = document.querySelector('#localVideo');
 var remoteVideo = document.querySelector('#remoteVideo');
+var gen = document.querySelector('#gen');
+var gan = document.querySelector('#gan');
 
-if(localVideo !== null) {
+
+
 /////////////////////////////////////////////
 // var room = 'foo';
-window.room = 'aa';
 // Could prompt for room name:
 // room = prompt('Enter room name:');
 
 var socket = io.connect('https://www.homedoctor.cf');
-// https://www.homedoctor.cf
-if (room !== '') {
-  socket.emit('create or join', room);
-  console.log('Attempted to create or  join room', room);
-}
+window.romm = "aa";
+
+socket.emit('create or join', room);
+console.log('Attempted to create or  join room', room);
 
 socket.on('created', function(room) {
   console.log('Created room ' + room);
@@ -116,13 +119,15 @@ navigator.mediaDevices.getUserMedia({
   alert('getUserMedia() error: ' + e.name);
 });
 
+
+
 function gotStream(stream) {
   console.log('Adding local stream.');
   localStream = stream;
   localVideo.srcObject = stream;
   sendMessage('got user media');
   if (isInitiator) {
-    maybeStart();
+   // maybeStart();
   }
 }
 
@@ -258,4 +263,4 @@ function stop() {
   pc.close();
   pc = null;
 }
-}
+
